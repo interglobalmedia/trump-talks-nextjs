@@ -38,5 +38,6 @@ export async function getStaticProps() {
     props: {
       random,
     },
+    revalidate: 1,
   }
 }
