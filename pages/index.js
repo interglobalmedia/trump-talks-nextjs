@@ -28,7 +28,7 @@ export default function HomePage({ random }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(`https://api.whatdoestrumpthink.com/api/v1/quotes/random`);
 
   const random = await res.json();
@@ -38,6 +38,5 @@ export async function getStaticProps() {
     props: {
       random,
     },
-    revalidate: 1,
   }
 }
